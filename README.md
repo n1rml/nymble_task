@@ -15,4 +15,4 @@
 
 > This repository contains a video showing the outputs from both ends.
 
-![test setup](test_setup.png)
+![test setup](test_setup.jpg)
