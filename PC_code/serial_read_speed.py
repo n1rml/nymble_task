@@ -29,7 +29,7 @@ while True:
 
     if (get_time_ms() - last_time) >= 100:
         last_time = get_time_ms()
-        char_read_speed = char_read_count * 100
+        char_read_speed = char_read_count * 10 # Read speed scaling fix
         char_read_count = 0
 
     if ser.in_waiting >= 24:
@@ -37,7 +37,7 @@ while True:
             new_read = ser.read(24).decode()
             char_read_count += len(new_read)
             file.write(new_read)
-            print('data : {}   actual data rate : {} \r\n'.format(new_read,char_read_speed), end='')
+            print('data : {}   actual char read rate : {} \r\n'.format(new_read,char_read_speed), end='')
         except UnicodeDecodeError:
             pass
         except:
