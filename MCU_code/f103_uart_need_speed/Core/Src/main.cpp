@@ -83,7 +83,7 @@ uint8_t uart_intr_called;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
-	gv_char_read_speed = gv_char_read_count * 100;
+	gv_char_read_speed = gv_char_read_count * 10; // char read speed scaling fix
 	gv_char_read_count = 0;
 }
 
